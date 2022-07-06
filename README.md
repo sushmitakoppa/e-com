@@ -8,7 +8,9 @@
 npm install
 ```
 
-``` npm run dev```
+``` 
+npm run dev
+```
 
 2. Step 2
 ### Start Frontend Next
@@ -16,4 +18,6 @@ npm install
 npm install
 ```
 
-``` npm run serve ```
+``` 
+npm run serve
+ ```
