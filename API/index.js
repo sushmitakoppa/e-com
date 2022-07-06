@@ -2,13 +2,14 @@ const express = require("express");
 const mongoose = require('mongoose');
 const dotenv=require('dotenv')
 const bodyParser = require("body-parser");
-
+var cors = require("cors");
 
 
 const app = express();
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(cors());
 
 dotenv.config()
 mongoose.connect(process.env.MONGO_DB_URL,{
@@ -208,7 +209,7 @@ app.post("/cart", async (req, res) => {
   }
 });
 
-app.delete("/cart/", async (req, res) => {
+app.delete("/cart", async (req, res) => {
   const itemId = req.query.itemId;
   try {
     let cart = await Cart.find({});
